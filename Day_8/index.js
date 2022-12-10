@@ -100,22 +100,22 @@ const input = `20212021102022010013123130003202143032041402552342542442224030034
 
 const logMap = (array) => {
 	array.map((item) => {
-		let lineString = "";
+		let lineString = '';
 		item.map((item) => {
 			if (item.isVisible) {
-				lineString += `\x1b[32m${item.height}\x1b[0m`;
-				// lineString += "\x1b[32m●\x1b[0m";
+				// lineString += `\x1b[32m${item.height}\x1b[0m`;
+				lineString += '\x1b[32m●\x1b[0m';
 			} else {
-				lineString += `\x1b[31m${item.height}\x1b[0m`;
-				// lineString += " ";
+				// lineString += `\x1b[31m${item.height}\x1b[0m`;
+				lineString += ' ';
 			}
 		});
 		console.log(lineString);
 	});
 };
 
-const treeMap = input.split("\n").map((item) => {
-	const array = item.split("");
+const treeMap = input.split('\n').map((item) => {
+	const array = item.split('');
 	const newArray = array.map((item) => {
 		return {
 			height: parseInt(item),
